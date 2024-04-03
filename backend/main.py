@@ -87,7 +87,13 @@ def predictDisease(symptoms):
 # Predict and display result
 if st.button("Predict"):
     result = predictDisease(symptoms_input)
-    predictdisease = result['final_prediction']
-    st.success(f"Predicted Disease: {predictdisease}")
+    rf_prediction_disease = result['rf_model_prediction']
+    nb_prediction_disease = result['naive_bayes_prediction']
+    svm_prediction_disease = result['svm_model_prediction']
+    final_prediction_disease = result['final_prediction']
+    st.success(f"Predicted Disease1: {rf_prediction_disease}")
+    st.success(f"Predicted Disease2: {nb_prediction_disease}")
+    st.success(f"Predicted Disease3: {svm_prediction_disease}")
+    st.success(f"Predicted Disease Result: {final_prediction_disease}")
 # # Testing the function
 # print(predictDisease("Itching,Skin Rash,Nodal Skin Eruptions"))
